@@ -9,34 +9,52 @@ $(document).ready(function() {
 	var wins = 0;
 	var losses = 0;
 	var guessesLeft = 7;
-
-//Variable for computerGuess to pick random letter choice
-	var computerGuess = alphabet[Math.floor(Math.random() + alphabet.length)];
-	console.log(computerGuess);
+	var guessedLetters = []; //for storing user guesses
 	
 // Record keyboard input from user.
     document.onkeyup = function(event) {
 // Pulls user key pressed, changes to lower case. Save as event key variable.
-    var userGuess = event.key;
+    	var userGuess = event.key;
+    	guessedLetters.push (userGuess);
 
-       }
-     for (i=0, i<alphabet.length, i++) {   
-        //If correct letter is pressed, add to Wins
-        if (userGuess === computerGuess) {
-        	Wins++;
-        }
-        // If incorrect letter presses, add 1 to losses, subtract 1 guess, show past guesses.
-        else {
-            Losses++;
-            Guesses Left--;
-         }
-        if guesses === 0 {
-            alert("You lose. You don't have the gift!");
-        }
-// Possible fix for getting count of choices in browser
+//Variable for computerGuess to pick random letter choice
+		
+		var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+		console.log(computerGuess);
 
+//winsDisplay.innerHTML = winsCounter --> possible start for javascript attempt of counters
+		
+	        //If correct letter is pressed, add to Wins
+	        if (userGuess === computerGuess) {
+	        	wins++;
+	        	// add number of wins to HTML by appending
+	           	$("#wins").text("Wins: " + wins);
+	        }	
+	        // If incorrect letter presses, add 1 to losses, subtract 1 guess, show past guesses.
+	        else {
+	            losses++;
+	            // add number of losses to HTML by appending
+				$("#losses").text("Losses: " + losses);
+	            guessesLeft--;
+	            $("#guessesLeft").text("Guesses Left: " + guessesLeft);
+	            // add number of guesses to HTML by appending
+	            $("#guessesSoFar").text("Guessed so far: " + guessedLetters);
+	            // javascript alternative should be something like this: document.querySelector("#guessesSoFar")[0].textContent = guessedLetters
+	         }
+
+	        if (guessesLeft === 0) {
+	            alert("You lose. You don't have the gift!");
+	            //Reset all counters to begin game again
+
+	        }
+   }
+})
+/* MISSING ITEMS: 
+1. Reset function or when person loses
+2. Populate starting values for wins, losses, and guesses left
+*/
+
+// Possible fix for getting count of choices in browser if using JavaScript
         //document.querySelector('wins') ______ = "Wins: "+ wins;
         //document.querySelector('losses')
         //document.querySelector('guessesLeft')
-    }
-}

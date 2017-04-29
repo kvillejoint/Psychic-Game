@@ -10,24 +10,31 @@
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	-->
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+	<!-- Link to jQuery file -->
+	<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+
 	<!-- Link to JavaScript file -->
 	<script type="text/javascript" src="./assets/javascript/game.js"></script>
 </head>
 <body>
 
-	<h1>The Psychic Game</h1>
+	<h1>Psychic Game</h1>
 
 	<br></br>
 
-	<h2>Guess what letter I'm thinking of</h2>
+	<h2>Guess the correct letter</h2>
 
 	<br></br>
 
 	<div id="game">
-		<h3 id="wins">Wins: </h3>
-  		<h3 id="losses">Losses: </h3>
-	  	<h3 id="guessesLeft">Guesses Left: </h3>
-	  	<h3 id="guessesSoFar">Your guesses so far: </h3>
+		<h3 id="wins">Wins: <span id="wins"></span></h3>
+  		<h3 id="losses">Losses: <span id="losses"></span></h3>
+	  	<h3 id="guessesLeft">Guesses Left: <span id="guessesLeft"></span></h3>
+	  	<h3 id="guessesSoFar">Guesses so far: <span id="guessesSoFar"></span></h3>
 	</div>
 </body>
 </html>
