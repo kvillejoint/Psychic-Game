@@ -41,12 +41,20 @@ $(document).ready(function() {
 	            $("#guessesSoFar").text("Guessed so far: " + guessedLetters);
 	            // javascript alternative should be something like this: document.querySelector("#guessesSoFar")[0].textContent = guessedLetters
 	         }
-
+	        //When no guesses left the game ends
 	        if (guessesLeft === 0) {
 	            alert("You lose. You don't have the gift!");
-	            //Reset all counters to begin game again
-
+	            
+	            //Reset all counters to begin game again - Section not working properly
+				/*
+				function resetGame() {
+	  			losses = 0;
+	  			guessesLeft = 7;
+	  			guessedLetters = [];
+	  			*/
 	        }
+
+	        
    }
 })
 /* MISSING ITEMS: 
