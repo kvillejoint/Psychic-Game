@@ -44,25 +44,25 @@ $(document).ready(function() {
 	        //When no guesses left the game ends
 	        if (guessesLeft === 0) {
 	            alert("You lose. You don't have the gift!");
-	            
-	            //Reset all counters to begin game again - Section not working properly
-				/*
-				function resetGame() {
-	  			losses = 0;
-	  			guessesLeft = 7;
-	  			guessedLetters = [];
-	  			*/
+	            resetGame ();
 	        }
+	            //Reset all counters to begin game again - Section not working properly
+				
+				function resetGame() {
+					console.log("reset game is running")
+	  				losses = 0;
+	  				$("#losses").text("Losses: " + losses);
+	  				guessesLeft = 7;
+	  				$("#guessesLeft").text("Guesses Left: " + guessesLeft);
+	  				guessedLetters = [];
+	  				$("#guessesSoFar").text("Guessed so far: " + guessedLetters);
+	  			}
+	       
 
-	        
-   }
-})
+	}//end of doc on key up
+
+});
+
 /* MISSING ITEMS: 
-1. Reset function or when person loses
 2. Populate starting values for wins, losses, and guesses left
 */
-
-// Possible fix for getting count of choices in browser if using JavaScript
-        //document.querySelector('wins') ______ = "Wins: "+ wins;
-        //document.querySelector('losses')
-        //document.querySelector('guessesLeft')
